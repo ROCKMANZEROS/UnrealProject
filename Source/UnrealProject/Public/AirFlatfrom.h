@@ -1,0 +1,29 @@
+﻿#pragma once
+
+#include "CoreMinimal.h"
+#include "GameFramework/Actor.h"
+#include "AirFlatfrom.generated.h"
+
+UCLASS()
+class UNREALPROJECT_API AAirFlatfrom : public AActor
+{
+	GENERATED_BODY()
+	
+public:	
+	
+	AAirFlatfrom();
+
+protected:
+	USceneComponent* SceneRoot;
+	UStaticMeshComponent* StaticMeshComp;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Platfrom")
+	float RotationSpeed;
+	
+	virtual void BeginPlay() override;
+
+public:	
+
+	virtual void Tick(float DeltaTime) override;
+
+};
